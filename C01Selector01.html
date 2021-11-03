@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C01Selector01.html</title>
+
+    <style type="text/css">
+    /* 
+    Selector(선택자)
+
+    1. 전체선택자(*) : 글꼴이나 여백을 문서 전체에 지정할 때 사용한다.
+    */
+        * {
+            margin:0px; /* 문서의 마진을 0으로 설정 */
+            font-family: Verdana; /* 문서의 기본글꼴 설정 */
+        }
+    /*
+    2. 태그선택자(태그명) : 태그와 동일한 이름을 사용하여 문서 내 있는
+        모든 해당 태그를 선택한다.
+    */
+        div{ /* 문서의 모든 div태그 선택하여 테두리 설정 */
+            border: 2px solid red;
+        }
+        span{
+            color: blue; font-size: 20px;
+            border: 1px dotted gray;
+        }
+    /*
+    3. 클래스선택자(.클래스명) : 클래스 속성으로 선택가능한 선택자
+        동일한 클래스명을 여러 태그에 중복으로 사용할 수 있으므로
+        해당 클래스를 일괄로 선택한다.
+    */
+        .positive{
+            font-weight: bold; /* 텍스트 두께 설정 */
+            background-color: rgb(255, 153, 21); 
+        }
+        .nagative{
+            color: pink; font-size: 10px; /* 텍스트 색과 크기 설정 */
+        }
+    /*  
+    4. 하위선택자(상위명 하위명) : 공백(space)으로 하위태그 지정
+        하위의 모든 요소가 선택된다. 
+            ex) table태그라면 tr,td 모두 선택
+        
+    5. 자식선택자(상위명>자식명) : >(꺽쇄)로 자식태그 지정
+        하위 태그중 바로 아래 있는 1단계 태그만 선택한다.
+            ex) table태그라면 tr만 선택
+    */
+        .myDiv span{ /* myDiv클래스 하위의 모든 span태그 선택*/
+            color: red; font-size: 24px;
+        }
+        .myDiv > span{ /* myDiv클래스 바로 다음 단계의 span태그만 선택*/
+            color: blue; font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>선택자</h2>
+    디폴트 내용입니다
+    <div>
+        <span>div태그는 block Element입니다. 마진을 확인해봅시다.</span>
+        <br>
+        저의 <span class="positive">장점</span>은
+            <span class="positive">긍정적인 성격</span>입니다.
+        <br>
+        저의 <span class="nagative">단점</span>은
+            <span class="nagative">게으른 성격</span>입니다.
+    </div>
+
+    <h2>하위선택자 및 자식선택자</h2>
+    <div class="myDiv">
+        <span>div태그안의 span태그 [myDiv의 하위태그 & 자식태그]</span>
+        <fieldset>
+            <span>fieldset 태그안의 span태그 [myDiv의 하위태그]</span>
+        </fieldset>
+    </div>
+</body>
+</html>
