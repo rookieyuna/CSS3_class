@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C01Selector03.html</title>
+    <style>
+        #content{
+            width: 300px; background-color: yellow;
+        }
+        /* list-style : li태그의 불릿설정(none 설정시 공백)  */
+        ul li {
+            list-style: none; border: 1px solid green;
+            font-size: 24px; font-weight: bold; height: 50px;
+        }
+    /*
+    11. 구조선택자 : 동일한 수준의 태그들 중에서 홀수 혹은 짝수번쨰
+        요소를 선택하여 스타일을 적용한다.
+    */
+        div#content ul li:nth-child(2n+1){ /* 홀수번째 요소 */
+            background-color: #820f6b;
+        }
+        div#content ul li:nth-child(2n){ /* 짝수번째 요소 */
+            background-color: skyblue;
+        }
+        div#content ul li:first-child{
+            background-color: red; color: #ffffff;
+        }
+        div#content ul li:last-child{
+            background-color: blue; color: #ffffff;
+        }
+        /*
+        구조선택자는 n 대신 정수를 사용해서 지정할 수 있다.
+        */
+        li:nth-child(2){
+            color: red;
+        }
+
+    /*
+    12. 문자선택자 : 특정요소의 글자 혹은 문자열을 선택
+        [형식]
+            선택요소::first-letter { … }
+            선택요소::first-line { … }
+
+    */
+        #start::first-letter, #end:first-letter{ /*첫 글자 선택*/
+            font-size: 30px;
+        }
+        #start::first-line, #end:first-line{ /*첫번째 줄 선택*/
+            color: red; font-weight: bold;
+        }
+        /*::selection 은 드래그시 반전되는 배경색과 글자색 지정시 사용*/
+        #character p:first-child::selection{
+            color: yellow; background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>구조선택자</h2>
+    <!-- #content>ul>li*6 -->
+    <div id="content">
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+            <li>메뉴5</li>
+            <li>메뉴6</li>
+        </ul>
+    </div>
+
+    <h2>문자선택자</h2>
+    <!-- #character>p*2 -->
+    <div id="character">
+        <p id="start">
+            강의시작날짜 <br> 21년 9월 16일
+        </p>
+        <p id="end">
+            강의종료날짜 <br> 22년 3월 1일
+        </p>
+    </div>
+
+    <!-- div>ul>li*5 -->
+    <div>
+        <ul>
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+            <li>메뉴5</li>
+        </ul>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C03Font01.html</title>
+
+    <style>
+        body{
+            /* 기본폰트 크기를 지정하지 않으면 16px(12pt)가 기본사이즈
+            이때 1em은 16px와 동일한 크기가 된다. */
+
+            /* font-size: 12px; */
+
+            /* 하지만 기본폰트 사이즈를 위와같이 변경하여 선언하면
+            1em은 선언한 값이 된다. 즉, em단위는 가변적으로 변한다. */
+        }
+    </style>
+</head>
+<body>
+    <h2>기본상태의 텍스트 크기</h2>
+    <!-- CSS를 통해 기본폰트 사이즈를 지정하지 않을 때 값 (아래모두동일) -->
+    기본폰트
+    <br>
+    <span style="font-size: 16px;">글자크기16px</span>
+    <span style="font-size: 12pt;">글자크기12pt</span>
+    <span style="font-size: 1em;">글자크기1em</span>
+
+    <h2>폰트를 2배로 확대한 크기</h2>
+    <span style="font-size: 32px;">글자크기32px</span>
+    <span style="font-size: 24pt;">글자크기24pt</span>
+    <span style="font-size: 2em;">글자크기2em</span>
+
+    <h2>폰트를 1/2로 축소한 크기</h2>
+    <span style="font-size: 8px;">글자크기8px</span>
+    <span style="font-size: 6pt;">글자크기6pt</span>
+    <span style="font-size: .5em;">글자크기.5em</span>
+
+
+    <!-- 
+        font-size:텍스트 크기
+        font-family: 글꼴(폰트) 지정
+     -->
+    <h2>텍스트 모양에 관련된 속성</h2>
+    <span style="font-style: 1.8em; font-family: HYPMokGak;">
+        텍스트 크기, 글꼴 HYPMokGak
+    </span>
+
+    <!-- 
+        font-weight: 텍스트 두께 (bold-진하게, normal-기본, lighter-얇게)
+        font-style: 텍스트 스타일 지정
+     -->
+    <h2>텍스트의 두께 및 스타일</h2>
+    <span style="font-weight: bold; font-style: italic;">
+        두껍게 씁시다. 그리고 이탤릭체로 해보자
+    </span>
+    
+    <h2>텍스트 사이의 간격</h2>
+    <span style="letter-spacing: 2em; border: 1px solid red;">
+        한국소프트웨어인재개발원
+    </span>
+
+    <h2>단어 사이의 간격</h2>
+    <span style="word-spacing:1em; border:1px solid red">
+        한국 소프트웨어 인재개발원
+    </span>
+</body>
+</html>
