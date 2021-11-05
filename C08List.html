@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C08List.html</title>
+<style>
+    /* li태그로 top메뉴 만들기 */
+
+    /* 
+    1. li block 속성을 inline 속성으로 변경 
+    2. 각 li태그 오른쪽 border를 2px로 지정
+    3. 오른쪽 padding으로 간격 조정
+    */
+    #topmenu li{
+        display: inline;
+        border-right: 2px rgb(158, 158, 158) solid;
+        padding-right: 6px;
+    }
+    /* 
+    4. 마지막 li태그의 border를 제거한다(0px or none)
+    */
+    #topmenu li:last-child{
+        border:none;
+        /* border: 0px; */
+    }
+    /* 
+    5. li태그내의 a태그에 기존효과제거 및 색상적용
+    */
+    #topmenu li a{
+        text-decoration: none;
+        color: darkcyan;
+    }
+    /* 
+    6. a링크에 마우스를 올렸을 때 효과적용
+    */
+    #topmenu li a:hover{
+        text-decoration: underline;
+        color: palevioletred;
+    }
+    /* 
+    7. a링크를 마우스로 클릭했을 때 효과적용
+    */
+    #topmenu li a:active{
+        color: white;
+        background-color: palevioletred;
+    }
+
+    /* ******************** */
+
+    /* 
+    [목록태그 스타일 속성]
+    list-style-type => 불릿 모양 설정
+    list-style-position => outside(default), inside
+    */
+    .sport{
+        border: 5px solid blue;
+        list-style-type: upper-roman;
+        list-style-position: inside;
+    }
+    .sport li{
+        border: 1px solid red;
+    }
+    /* 
+    list-style-image: url() => 불릿에 커스텀 이미지 적용
+    */
+    .food_image{
+        list-style-image: url('./images/bullet.png');
+    }
+    /* 
+    list-style-type: none;으로 설정하여 불릿 제거 가능
+    불릿 위치에 공백을 지우려면 margin-left값을 음수로 지정
+
+    ※ margin은 음수값 지정이 가능하나 padding은 음수값 불가
+    */
+    ul.bullet{
+        list-style-type: none;
+        border: 1px solid yellowgreen;
+        margin-left: -30px;
+    }
+
+</style>
+</head>
+<body>
+<!-- fieldset>legend+ul#topmenu>(li>a[href=#])*5 -->
+    <fieldset>
+        <legend></legend>
+        <ul id="topmenu">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">장바구니</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </fieldset>
+
+    <!-- ******************** -->
+
+    <fieldset>
+        <legend>당신이 가장 좋아하는 스포츠는?</legend>
+    <!-- ul.sport>li*5 -->
+        <ul class="sport">
+            <li>축구</li>
+            <li>야구</li>
+            <li>배구</li>
+            <li>농구</li>
+            <li>배드민턴</li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>당신이 가장 좋아하는 음식은?</legend>
+        <ul class="food_image">
+            <li>짬뽕</li>
+            <li>짜장면</li>
+            <li>된장찌개</li>
+            <li>김치찌개</li>
+            <li>냉면</li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>당신이 가장 좋아하는 위인은?</legend>
+        <h3>불릿만 제거하기</h3>
+        그냥text
+        <ul class="bullet">
+            <li>세종대왕</li>
+            <li>이순신장군</li>
+            <li>정조대왕</li>
+        </ul>
+    </fieldset>
+</body>
+</html>

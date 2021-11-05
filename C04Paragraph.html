@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C04Paragraph.html</title>
+</head>
+<body>
+    <!-- 
+    수평방향에서의 정렬
+        블럭앨리먼트 : 컨텐츠 크기와 상관없이 하나의 블럭을 차지하므로
+            우측 공간이 충분하여 컨텐츠 우측 정렬 가능
+        인라인엘리먼트 : 컨텐츠의 크기만큼 영역을 차지하므로 공간이 없어
+            정렬되지 않음 (정렬 필요 시 부모엘리먼트에서 text-align 적용)
+     -->
+    <h2>문단관련 CSS 속성들</h2>
+
+    <div style="border:1px blue dotted; width: 400px;">
+        <h3>컨텐츠 수평방향 정렬</h3>
+        <div style="border: 1px solid red; text-align:right;">
+            블럭엘리먼트 <!-- 우측정렬 됨-->
+        </div>
+        <span style="border: 1px solid blue; text-align: right;">
+            인라인엘리먼트 <!-- 우측정렬 안됨-->
+        </span>
+        <!-- 부모 블럭앨리먼트로 감싼 후 text-align하면 정렬 가능 -->
+        <div style="text-align: right;">
+            <span style="border: 1px solid blue;">
+                div부모가 있는 인라인엘리먼트 <!-- 우측정렬 됨-->
+            </span>
+        </div>
+    </div>
+
+    <h3>줄 사이의 간격</h3>
+    <!-- 
+        line-height : 줄간격. 라인 사이의 간격을 띄우는 속성(블럭/인라인에 다르게 적용)
+            - 블럭엘리먼트는 컨텐츠 세로영역이 늘어나 줄간격이 생기는 것
+                처럼 보여지며 줄 사이의 간격이 벌어진다.
+            - 인라인엘리먼트는 컨텐츠영역은 변화가 없고 
+                지정된 크기만큼 줄간격이 생겨 사이가 벌어진다.
+     -->
+    <h4 style="line-height: 5em; border: 1px solid blue;">
+        블럭엘리먼트1에 줄간격 적용<br>
+        블럭엘리먼트1에 줄간격 적용
+    </h4>
+    <h4 style="border: 1px solid black;">블럭엘리먼트2</h4>
+    <h4 style="border: 1px solid black;">블럭엘리먼트3</h4>
+
+    <div class="inline">
+        <span style="line-height: 4em; border: 1px solid black;">인라인엘리먼트1</span>
+        <br>
+        <span style="border: 1px solid black;">인라인엘리먼트2</span>
+        <br>
+        <span style="border: 1px solid black;">인라인엘리먼트3</span>
+    </div>
+
+
+    <h3>수직상태에서의 가운데 정렬</h3>
+    <!-- div박스의 height와 line-height의 값이 동일하면 수직영역의
+        가운데 정렬이 된다. 블럭엘리먼트의 영역이 늘어나는 특징을 활용한 것-->
+    <h4>블럭엘리먼트 사용시 방법1</h4>
+    <div style="border: 1px solid black; height:200px; width: 200px;
+        line-height: 200px;">
+        나는 텍스트1
+    </div>
+    <!-- div박스 내부의 상단padding 값을 지정해서 텍스트를 아래쪽으로 밀어준다.
+        이경우 세로영역이 늘어나므로 사이즈는 적절히 조정해야한다. -->
+    <h4>블럭엘리먼트 사용시 방법2</h4>
+    <div style="border: 1px solid red; height: 100px; width: 200px;
+        padding-top: 90px;">
+        나는 텍스트2
+    </div>
+
+    <!-- 인라인엘리먼트는 수직 정렬시 vertical_align을 사용한다
+            *text-align => left(디폴트)/center/right
+            *vertical_align => top(디폴트)/middle/bottom
+        (※ vertical_align속성은 블럭엘리먼트에서 사용 불가) -->
+    <h4>인라인 엘리먼트 사용시 방법</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style="height: 100px; vertical-align: top;">
+            인라인엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: middle;">
+            인라인엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style="height: 100px; vertical-align: bottom;">
+            인라인엘리먼트 세로정렬</td>
+        </tr>
+    </table>
+
+    <!-- text-align:justify => 우측의 불규칙적인 여백을 정리해주는 정렬 -->
+    <h2>배분정렬: justify</h2>
+    <p style="border: 1px solid blue; text-align: justify;">
+        올해 북반구 겨울을 앞두고 사양산업으로 평가 받던 석탄 기업들이 함박웃음을 짓고 있다. 세계적 에너지 대란 탓에 석탄 수요가 급증 하면서 실적이 개선되고 있어서다. <br>
+        세계 최대 채굴기업인 스위스 글렌코어, 남아프리카공화국 엑사로 등은 넘치는 현금을 활용해 새로운 광물 자원에 투자하겠다는 계획을 내놨다.<br>
+    </p>
+
+    <!-- 블럭엘리먼트는 text-indent 속성으로 문단 들여쓰기 적용 -->
+    <h2>들여쓰기: text-indent</h2>
+    <div style="border: 1px solid red; text-indent: 1em;">
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    </div>
+    <!-- 인라인엘리먼트는 자체 들여쓰기가 불가하므로 부모를 활용 -->
+    <div style="border: 1px solid blue; text-indent: 1em; ">
+        <span>
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+            인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+    </div>
+</body>
+</html>

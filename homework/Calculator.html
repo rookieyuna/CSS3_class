@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+<style>
+    *{
+        border: none;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+    }
+    table{
+        width: 422px; height: 366px;
+
+        border-radius: 10px;
+        background-color: #DDDDDD;
+    }
+    td div{
+        width: 413px; height: 83px;
+        border-radius: 10px;
+        background-color:#70C738;
+        box-sizing: border-box;
+
+        color: #373737;
+        font-size: 2em;
+        text-align: right;
+        line-height: 83px;
+        padding-right: 20px;
+    }
+    .del_btn{
+        width: 202px; height: 50px;
+        border-radius: 10px;
+        background-color: #7B7B7B;
+    }
+    .num_btn{
+        width: 99px; height: 50px;
+        border-radius: 10px;
+        background-color:#373737;
+    }
+    .func_btn{
+        width: 99px; height: 50px;
+        border-radius: 10px;
+        background-color:#FA960A;
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <div>
+                    123+456
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" name="backspace" class="del_btn" value="BackSpace">
+            </td>
+            <td colspan="2">
+                <input type="button" name="c" class="del_btn" value="C">
+            </td>
+        </tr>
+        <tr>
+            <td><input type="button" name="num_1" class="num_btn" value="1"></td>
+            <td><input type="button" name="num_2" class="num_btn" value="2"></td>
+            <td><input type="button" name="num_3" class="num_btn" value="3"></td>
+            <td><input type="button" name="func_1" class="func_btn" value="/"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="num_4" class="num_btn" value="4"></td>
+            <td><input type="button" name="num_5" class="num_btn" value="5"></td>
+            <td><input type="button" name="num_6" class="num_btn" value="6"></td>
+            <td><input type="button" name="func_2" class="func_btn" value="x"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="num_7" class="num_btn" value="7"></td>
+            <td><input type="button" name="num_8" class="num_btn" value="8"></td>
+            <td><input type="button" name="num_9" class="num_btn" value="9"></td>
+            <td><input type="button" name="func_3" class="func_btn" value="+"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="num_=" class="num_btn" value="="></td>
+            <td><input type="button" name="num_0" class="num_btn" value="0"></td>
+            <td><input type="button" name="num_." class="num_btn" value="."></td>
+            <td><input type="button" name="func_4" class="func_btn" value="-"></td>
+        </tr>
+
+    </table>
+</body>
+</html>

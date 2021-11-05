@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C05Border03.html</title>
+<style>
+    /* 사이즈 지정 시 0의 경우에는 단위 생략가능하나 이외에는 반드시 입력 */
+    *{margin:0 0 0 20px; padding:0;}
+
+    /* [공통 적용 높이] div 200px + 테두리 2px + 패딩20px => 전체높이 222px */
+    div{
+        width: 200px;height: 200px;line-height: 200px;
+        text-align: center; border:1px solid red; padding: 10px;
+    }
+    /* 공통으로 적용한 padding과 border를 0으로 설정 => 높이 200px */
+    #box1{
+        border: 0px; padding:0; background-color: orange;
+    }
+    /* box-sizing 속성에 border-box를 부여하여 div의 크기를 유지시키며
+         border&padding이 div안쪽으로 적용되므로 => 높이 200px */
+    #box2{
+        background-color: purple;
+        box-sizing: border-box;
+    }
+    /* 공통으로 적용한 border와 padding이 적용되어 크기 확장 => 높이 222px */
+    #box3{
+        background-color: #cecece;
+        box-sizing: content-box;
+    }
+
+</style>
+
+</head>
+<body>
+    <h2>box-sizing 속성</h2>
+
+    <h3>no border, no padding</h3>
+    <div id="box1">box1</div> 
+    <br>
+    <h3>box-sizing: border-box</h3>
+    <div id="box2">box2</div> 
+    <br>
+    <h3>box-sizing: content-box (default)</h3>
+    <div id="box3">box3</div> 
+    <br>
+</body>
+</html>

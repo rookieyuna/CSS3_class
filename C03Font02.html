@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C03Font02.html</title>
+<style>
+    body{
+        /* 기본폰트 사이즈를 지정한다 */
+        font-size: 12px;
+    }
+    /* 해당문서의 모든 a태그를 선택하여 스타일 적용 */
+    a{
+        text-decoration: none; color: black;
+    }
+    a:hover{ /* a:hover : 링크에 마우스를 올릴 때 효과 */
+        text-decoration: underline; color: green;
+        font-size: 30px; font-weight: bold;
+    }
+    a:active{ /* a:active : 링크를 클릭할 때 효과 */
+        text-decoration: overline; color: red;
+    }
+    a:visited{ /*a:visited : 링크 방문이력이 있을 때 효과*/
+        text-decoration: line-through; color: blue;
+    }
+
+    /* a태그중에서 other클래스를 가진 요소 선택 */
+    a.other{
+        text-decoration: none; color: brown;
+    }
+    /* a태그 중 other클래스에 마우스를 올릴 때 효과 */
+    a.other:hover{
+        text-decoration: underline; color: #EEEEEE;
+        font: 20px; font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+    <h2>텍스트 꾸미기</h2>
+    <!-- div>ul.link>li*6 -->
+    <div>
+        <ul class="link">
+            <li><a href="http://naver.com">네이버</a></li>
+            <li><a href="http://nate.com">네이트</a></li>
+            <li><a href="http://daum.net">다음</a></li>
+            <li><a href="http://google.com">구글</a></li>
+            <li><a href="http://ikosmo.co.kr">코스모</a></li>
+            <li><a href="http://yahoo.com">야후</a></li>
+            <li><a href="http://www.paris.co.kr">파리바게뜨</a></li>
+        </ul>
+    </div>
+    <div>
+        <a href="http://www.tmon.co.kr" class="other">티모니</a>
+    </div>
+</body>
+</html>

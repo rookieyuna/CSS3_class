@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C07MarginPadding.html</title>
+<style>
+    /* padding 값 방향별로 개별 지정하기 */
+    #div1{
+        border: 1px solid gray;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+    /* padding 값 전체를 일괄 지정하기 */
+    #div2{
+        border: 1px solid red;
+        padding: 20px;
+    }
+    /* padding 값 상하/좌우 각각 지정하기 */
+    #div3{
+        border: 1px solid blue;
+        padding: 30px 50px;
+    }
+    /* padding 값 상/좌우/하 각각 지정하기 */
+    #div4{
+        border: 1px solid green;
+        padding:30px 100px 10px;
+    }
+    /* padding 값 상/우/하/좌 각각 지정하기 */
+    #div5{
+        border: 1px solid black;
+        padding: 10px 30px 50px 70px; 
+    }
+</style>
+</head>
+<body>
+    <h2>여백관련속성</h2>
+
+    <h3>padding(안쪽여백)관련 속성</h3>
+
+    <h4>블럭엘리먼트</h4>
+
+    <div id="div1">
+        "상우하좌" 여백 각각 지정하기
+    </div>
+
+    <div id="div2">
+        "상우하좌" 여백 동시 지정하기
+    </div>
+    <div id="div3">
+        "상하" 좌우" 여백 각각 지정하기
+    </div>
+    <div id="div4">
+        "상" "좌우" "하" 여백 각각 지정하기
+    </div>
+    <div id="div5">
+        "상" "우" "하" "좌" 여백 각각 지정하기
+    </div>
+
+    <h4>인라인 엘리먼트</h4>
+    <!--
+        인라인 엘리먼트는 padding 값을 부여했을때 
+        상하는 영역만 늘어날 뿐 여백은 생기지 않음, 좌우는 여백 적용됨 
+        만약 위아래로 여백을 주고싶다면 부모 블럭엘리먼트를 통해 설정해야함
+    -->
+    <span style="border: 1px solid orange; 
+            padding:40px 40px 40px 40px">
+        나는 span태그입니다. 인라인엘리먼트이죠~~
+    </span>
+    <span style="border: 1px solid orange; 
+            padding:40px 40px 40px 40px">
+        나는 span태그입니다. 인라인엘리먼트이죠~~
+    </span>
+    <br>
+    span태그아래쪽 텍스트임당!
+
+    <!-- 
+        블럭1의 아래, 블럭2의 위로 각각 마진을 적용했지만 합해진 값만큼
+        마진이 생기지 않고 둘 중 큰 값 하나만 적용되므로 주의해야한다.
+     -->
+    <h4>block과 block의 마진</h4>
+    <fieldset>
+        <legend>Case1</legend>
+
+        <div style="border: 1px solid red; margin-bottom: 100px;
+            margin-left: 100px; margin-right: 100px;">
+            Block1번
+        </div>
+
+        <div style="border: 1px solid green; margin-top:50px;">
+            Block2번
+        </div>
+    </fieldset>
+
+    <!-- 
+        블럭의 margin-bottom 값을 주면 적용되지만 인라인 margin-top 값을
+        주면 적용되지 않아 두 태그 사이에 간격이 생기지 않는다.
+        인라인 엘리먼트는 padding과 마찬가지로 좌우 margin값만 적용할 수 있다
+    -->
+    <h4>block과 inline 마진</h4>
+    <fieldset>
+        <legend>Case2</legend>
+
+        <div style="border: 1px solid red; margin-bottom: 50px;
+            margin-left: 100px; margin-right: 100px;">
+            Block1번
+        </div>
+
+        <span style="border: 1px solid green;
+            margin-top: 100px;
+            margin-left: 100px; margin-right: 100px;">
+            Inline 엘리먼트 Inline 엘리먼트 Inline 엘리먼트 Inline 엘리먼트
+            Inline 엘리먼트 Inline 엘리먼트 Inline 엘리먼트 Inline 엘리먼트
+        </span>
+    </fieldset>
+
+    <!-- 
+        인라인엘리먼트는 margin-top, margin-bottom은 적용되지 않으므로
+        부모와의 여백을 통해 설정해야 한다. 좌우는 적용된다.
+     -->
+    <h4>inline inline 마진</h4>
+    <fieldset>
+        <legend>Case3</legend>
+
+        <span style="border: 1px solid red; margin-left: 150px;">
+            Inline 엘리먼트 Inline 엘리먼트 Inline 엘리먼트
+        </span>
+
+        <span style="border: 1px solid green; margin-right: 150px;">
+            Inline 엘리먼트 Inline 엘리먼트 Inline 엘리먼트
+        </span>
+    </fieldset>
+</body>
+</html>
