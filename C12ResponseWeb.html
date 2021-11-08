@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C12ResponseWeb.html</title>
+<style>
+    /* 전체 선택자를 통해서 문서의 기본 스타일 지정
+        수치가 0 이상인 경우에는 반드시 px, em 같은 단위가 있어야 적용된다 */
+    *{margin:0; padding:0; font-family: verdana;}
+
+    /* 블럭엘리먼트 자체에 대한 가운데 정렬을 위해 margin 사용
+        만약 적용되지 않는 브라우저나 텍스트를 가운데 정렬하려면 text-align을 사용 */
+    #AllWrap{
+        margin:0 auto; text-align: center;
+    }
+    #PartWrap{
+        width: 100%; text-align: left;
+        border: 1px solid blue;
+    }
+    #header{
+        border: 1px solid blue; text-align: center;
+        height: 100%; line-height: 100px;
+    }
+    /* list-style: none; li의 기본 불릿을 제거한다 */
+/* 
+overflow속성: 텍스트가 영역을 벗어났을 때 나타내는 방법
+        - visible : default값. 박스를 넘어가도 텍스트가 보임
+        - hidden : 박스를 벗어난 부분은 숨김 처리
+        - scroll : 컨텐츠의 크기와 상관없이 스크롤바 표시
+        - auto : 컨텐츠의 크기에 따라 스크롤바가 토글됨
+*/
+    #nav ul{
+        list-style: none;
+        overflow: hidden;
+    }
+    /* float: left; 를 통해 li태그를 메뉴처럼 보이게 가로형 배치해줌 
+    box-sizing: border-box; 를 통해 전체넓이에 패딩과 보더를 포함하여 지정 */
+    #nav ul li{
+        font-size: 1.5em; font-weight: bold; height: 50px;
+        width: 20%; float: left; border: 1px solid blue;
+        text-align: center; line-height: 50px;
+        box-sizing: border-box;
+    }
+    #ContentWrap #content > h2{
+        border-bottom: 1px #808080 solid;
+        font-size: 2em;
+    }
+    #content {
+        padding: 20px;
+    }
+    #footer{
+        font-size: 2em; font-weight: bold; height: 100px;
+        line-height: 100px; text-align: center;
+        border:1px solid blue;
+    }
+    /* 
+    반응형 웹을 구현하기 위해 미디어 쿼리를 사용한다
+    디바이스(단말기)의 해상도에 따라 다른 형태의 화면을 보여주게 된다.
+    이 경우 모바일용 웹화면을 별도로 제작하지 않아도 되므로 편리하다.
+    */
+    /* 스크린의 크기가 640px 이하일 때 화면 */
+    @media screen and (max-width:640px) {
+        #AllWrap{width: 100%;}
+        #content p{
+            font-size: 2em; color: black;
+        }
+    }
+    /* 스크린의 크기가 641~999px 일 때 화면 */
+    @media screen and (min-width:641px) and (max-width:999px) {
+        #AllWrap{width: 100%;}
+        #content p{
+            font-size: 1.5em; color: red;
+            background-color: black;
+        }
+    }
+    /* 스크린의 크기가 1000px 이상일 때 화면 */
+    @media screen and (min-width:1000px) {
+        #AllWrap{width: 80%;}
+        #content p{
+            font-size: 1em; color: green;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div id="AllWrap">
+        <div id="PartWrap">
+            <div id="header">
+                <h1>HEADER</h1>
+            </div>
+            <div id="nav">
+                <ul>
+                    <li>메뉴1입니다</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                    <li>메뉴4</li>
+                    <li>메뉴5</li>
+                </ul>
+            </div>
+        </div>
+        <div id="ContentWrap">
+            <div id="content">
+                <h3>오늘부터 전국 3천508곳 사전투표…"신분증 있으면 누구나 가능"</h3>
+                <p>
+        (서울=연합뉴스) 이보배 기자 = 제21대 국회의원을 선출하는 4·15 총선 사전투표가 10일부터 이틀간 전국 3천508개 사전투표소에서 시작된다.
+        <br><br>
+        사전투표제는 별도의 신고를 하지 않아도 주소와 관계없이 사진이 부착된 신분증만 있으면 선거일 직전 금·토요일에 전국의 모든 읍·면·동사무소에서 투표할 수 있는 제도다.
+        <br><br>
+        사전투표 시간은 10∼11일 매일 오전 6시부터 오후 6시까지이다.
+        <br><br>
+        자신의 선거구가 아닌 곳의 사전투표소에서 투표하게 되면 기표한 투표지를 회송용 봉투에 넣어 투표함에 넣으면 된다. 회송용 봉투는 매일 투표가 끝난 후 해당 구·시·군 선관위에 우편으로 보내진다.
+        <br><br>
+        자신의 선거구 내 사전투표소를 이용한다면 투표지만 투표함에 넣으면 된다. 이 투표함은 관할 구·시·군 선관위 청사 내 폐쇄회로(CC)TV가 설치된 별도 장소에서 선거일 오후 6시까지 보관된다.
+        <br><br>
+        사전투표함은 선거일 당일 투표가 마감되면 일반투표함과 동시에 개표된다.
+        <br><br>
+        전체 사전투표소 중 8곳은 신종 코로나바이러스 감염증(코로나19) 확진을 받아 생활치료센터에 격리된 유권자들을 위해 센터 내에 마련됐다.
+        <br><br>
+        다수의 확진자와 의료·지원인력이 있는 서울(1곳)·경기(1곳)·대구(1곳)·경북(5곳)에 각각 설치됐다.
+        <br><br>
+        사전투표소별로 사전투표 기간 중 1일 5∼8시간씩 운영된다.
+        <br><br>
+        한편 이번 총선에서는 유권자들이 코로나19 감염 우려로 인해 사람들이 몰리는 본 선거일을 피해 사전투표소로 몰려 투표율이 높아질 것이란 전망이 높다.
+        <br><br>
+        사전투표가 적용된 첫 전국 단위 선거였던 2014년 제6회 지방선거의 사전투표율은 11.49%였다.
+                </p>
+            </div>
+        </div>
+        <div id="footer">
+            <h1>FOOTER</h1>
+        </div>
+    </div>
+    </body>
+    
+</html>

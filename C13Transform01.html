@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C13Transform01.html</title>
+
+<style>
+    #rect{
+        width: 150px; height: 150px;
+        line-height: 150px; background-color: lightcoral;
+        text-align: center;
+        /* 변형이 진행되는 시간 설정. 미설정시 애니메이션 효과가 안남 */
+        transition-duration: 1s;
+    }
+    #rect:hover{ /* 마우스를 올렸을 때 상태 */
+        width: 300px; height: 300px;
+        line-height: 300px; background-color: greenyellow;
+        font-size: 2em;
+    }
+    #rect:active{ /* 마우스를 클릭했을 때 상태 */
+        width: 250px; height: 250px;
+        line-height: 250px; background-color: skyblue;
+        border-radius: 110px;
+    }
+</style>
+</head>
+<body>
+    <h2>Transform(변형1)</h2>
+
+    <div id="rect">
+        나는 사각형
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C09DisplayVisibility.html</title>
+
+<style>
+    fieldset div {
+        width:100px; height: 100px;
+        text-align: center; line-height: 100px;
+    }
+    .div1{background-color: red;}
+    .div2{background-color: blue;}
+    .div3{background-color: green;}
+</style>
+</head>
+<body>
+    <h2>Display VS Visibility</h2>
+
+    <!-- 
+    visibility: hidden;
+    엘리먼트를 숨김처리 하지만 영역은 그대로 유지된다.
+        [속성값]
+            -hidden : 엘리먼트 숨김
+            -visible : default값. 
+     -->
+    <fieldset>
+        <legend>Visibility속성</legend>
+        <div class="div1">left</div>
+        <div class="div2" style="visibility: hidden;">center</div>
+        <div class="div3">right</div>
+    </fieldset>
+
+    <!-- 
+    display: none;
+    엘리먼트를 숨김처리 하고 동시에 영역도 삭제된다
+    (그래서 약간의 애니메이션 효과가 나타난다.)
+       [속성값]
+            -none : 엘리먼트 및 영역까지 숨김
+            -block : default값.
+            -inline: 인라인 박스형으로 변경
+            -inline-block: 가로형태이나 block속성을 가진 박스형으로 변경
+            -block: 블럭 박스형으로 변경
+     -->
+    <fieldset>
+        <legend>Display 속성</legend>
+        <div class="div1">left</div>
+        <div class="div2" style="display: none;">center</div>
+        <div class="div3">right</div>
+    </fieldset>
+
+    <fieldset>
+        <legend>HTML5의 hidden 속성</legend>
+        <div class="div1">left</div>
+        <div class="div2"  hidden>center</div>
+        <div class="div3">right</div>
+    </fieldset>
+
+    <style>
+        fieldset.inline div {
+            display: inline;
+        }
+    </style>
+    <!-- 
+    display: inline;
+    div태그가 가진 block속성을 완전히 파괴하여 width, height속성은 
+        의미가 없어지고 가로형배치로 변경된다.
+        즉, span태그와 같은 인라인 엘리먼트로 변경되었다.
+     -->
+    <h4>block -> inline으로 변경</h4>
+    <fieldset class="inline">
+        <legend>가로형 배치로 변경하기</legend>
+        <div class="div1">left</div>
+        <div class="div2"  >center</div>
+        <div class="div3">right</div>
+    </fieldset>
+
+
+    <style>
+        fieldset.inline_block div {
+            display: inline-block;
+        }
+    </style>
+    <!-- 
+    display: inline-block;
+        block속성을 유지하면서 가로형으로 배치해야 할 떄 사용하는 속성으로,
+        레이아웃을 구성할 때 유용하다. 즉, 크기를 유지할 수 있는 div태그와
+        가로형 배치가 되는 span태그의 중간 정도의 역할을 한다.
+     -->
+    <h4>block -> inline으로 변경</h4>
+    <fieldset class="inline_block">
+        <legend>가로형 배치로 변경하기</legend>
+        <div class="div1">left</div>
+        <div class="div2">center</div>
+        <div class="div3">right</div>
+    </fieldset>
+
+
+    <style>
+        fieldset.block span {
+            display: block;
+            
+        }
+    </style>
+    <!-- 
+    display: block;
+        inline 속성인 span태그를 block 속성으로 변경하여 세로배치
+     -->
+    <h4>block -> inline으로 변경</h4>
+    <fieldset class="block">
+        <legend>세로형 배치로 변경하기</legend>
+        <span class="div1">left</span>
+        <span class="div2"style="height: 100px; ">center</span>
+        <span class="div3">right</span>
+    </fieldset>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+</body>
+</html>

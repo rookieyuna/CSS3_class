@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C11MediaImport.html</title>
+
+<style>
+    /* 
+    @import
+        - link태그를 대체할 수 있다.
+        - style태그 안에서 사용해야하고 반드시 최상단에 선언되어야 한다.
+        - CSS파일에 오류가 있는 경우 다운로드 하지 않는다.
+    */
+    @import url(./style/import.css);
+    .content{
+        background-color: black; color:red;
+    }
+
+    /* 
+    @media
+        - 해당 웹페이지를 디바이스의 종류에 따라 각각 다르게 
+        화면을 구성할 수 있도록 해준다.
+        - 스크린(모니터)용과 프린터(출력물)용으로 구분할 수 있다.
+    */
+    @media screen { /* 스크린에서 보여지는 형태*/
+        .content{ 
+            background-color: black; color: white;
+        }
+    }
+
+    @media print { /* 프린트 할 때의 출력 형태*/
+        .content{
+            background-color: red; color: yellow;
+        }
+    }
+    /* 
+    모든 웹브라우저는 배경색 출력을 허용하지 않는다. 
+    허용하려면 인쇄 설정으로 들어가서 배경색 인쇄를 체크해야 한다!
+    */
+</style>
+</head>
+<body>
+    <h2>media속성</h2>
+    <div class="content">
+        <p>
+            <h3>안전한 여행으로 일상 회복하세요!…‘2021 여행가는 달’ 30일까지 운영</h3>
+            단계적 일상 회복에 맞춰 코로나19로 피해를 본 관광업계의 회복을 돕고 국민이 안전한 여행을 일상화할 수 있도록 문화체육관광부와 한국관광공사, 한국관광협회중앙회가 등이 공동으로 ‘2021 여행가는 달’을 오는 30일(화)까지 운영합니다.
+            <br><br>
+            이는 해마다 봄과 가을에 2주씩 운영해온 ‘여행주간’을 통합해 운영하는 겁니다.
+            ‘여행가는 달’ 기간에는 교통, 숙박, 여행 등에서 할인 혜택을 받을 수 있습니다.
+            <br><br>
+            한국철도공사(코레일)는 고속철도(KTX) 왕복권과 관광지 입장권이 결합된 관광 상품을 1만 8천 명에게 특가(할인율 20~40%)로 판매합니다. 서해금빛열차, 남도해양열차 등 4개 노선의 관광열차는 50% 할인된 가격으로 2만 2천 명에게 판매합니다.
+            <br><br>
+            전국고속버스운송조합(코버스)은 ‘여행가는 달’ 기간 중에 고속버스를 무제한 이용할 수 있는 ‘여행가는 달 고속버스 프리패스(3일권~7일권)’를 1만 명에게 3만 5천 원씩 할인해 판매합니다.
+        </p>
+    </div>
+</body>
+</html>
