@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemberFind.html</title>
+<style>
+    *{
+        font-size: 13px;
+    }
+    span.button{
+        line-height: auto;
+    }
+    fieldset{
+        width: 680px; height: 250px;
+        border: 4px solid #A0A0A0;
+    }
+    table{
+        width: 500px;
+        padding-top: 40px ;
+        padding-left: 20px;
+        box-sizing: border-box; 
+    }
+    tr td:first-child{
+        padding-bottom: 10px;
+    }
+    input {
+        border: 1px #CCCCCC solid;
+        height: 20px;
+    }
+    select {
+        height: 25px; width:90px;
+        border: 1px #CCCCCC solid;
+    }
+    img{
+        padding-top: 5px;
+    }
+    span{
+        color: #75746D;
+        font-weight:bold;
+    }
+    hr{
+        width: 400px; border: 1px dotted grey;
+        background-size: 7px 10px;
+    }
+    /* 맨아래 설명 */
+    #explain{ 
+        text-align: center;
+        color: #75746D;
+    }
+</style>
+</head>
+<body>
+    
+    <span class="button">
+        <input type="radio" name="menu_choice1" value="id_src" checked>
+        아이디 찾기</span>
+    <span class="button">    
+        <input type="radio" name="menu_choice1" value="pw_search">
+        비밀번호 찾기</span>
+    <br>
+    <fieldset>
+        <table align="center">
+            <tr>
+                <td>
+                    <img src="../images_login/arrow.png" alt=">">
+                    <span>이름(대표자명)</span>
+                </td>
+                <td>
+                    <input type="text" name="name" size="35px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../images_login/arrow.png" alt=">">
+                    <select name="phone_choice">
+                        <option value="휴대전화">휴대전화</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="phone1" size="1px"> -
+                    <input type="text" name="phone1" size="2px"> -
+                    <input type="text" name="phone1" size="2px">
+                </td>
+            </tr>
+
+        </table>
+        <hr>
+        <br><br><br>
+        <div id="explain">아이디를 찾기 위해서 이름과 휴대번호 혹은 이메일을 입력하세요</div>
+    </fieldset>
+
+
+    <br><br><br>
+
+
+
+    <span class="button">
+        <input type="radio" name="menu_choice2" value="id_src" >
+        아이디 찾기</span>
+    <span class="button">    
+        <input type="radio" name="menu_choice2" value="pw_search" checked>
+        비밀번호 찾기</span>
+    <br>
+    <fieldset>
+        <table align="center">
+            <tr>
+                <td>
+                    <img src="../images_login/arrow.png" alt=">">
+                    <span>아이디</span>
+                </td>
+                <td>
+                    <input type="text" name="name" size="35px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../images_login/arrow.png" alt=">">
+                    <span>이름(대표자명)</span>
+                </td>
+                <td>
+                    <input type="text" name="name" size="35px" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../images_login/arrow.png" alt=">">
+                    <select name="phone_choice">
+                        <option value="" >이메일</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="phone1" size="8px"> @
+                    <input type="text" name="phone1" size="8px">
+                    <select name="email_choice">
+                        <option value="" >직접입력</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <hr>
+        <br><br>
+        <div id="explain">비밀번호를 찾기 위해서 아이디, 이름과 휴대번호 혹은 이메일을 입력하세요</div>
+    </fieldset>
+
+</body>
+</html>
